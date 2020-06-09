@@ -1,0 +1,41 @@
+
+
+plugins {
+    id 'application'
+}
+
+apply plugin : "java"
+
+ext {
+    javaMainClass = "RunQCModule"
+}
+
+application {
+    mainClassName = javaMainClass
+}
+
+group 'MasterQC'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+    
+}
+configurations {
+    externalLibs
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+    externalLibs files('libs/htsjdk-2.22.0-SNAPSHOT.jar')
+}
+
+task runWithJavaExec(type: JavaExec) {
+    group = "Execution"
+    description = "Run the main class with JavaExecTask"
+    classpath = sourceSets.main.runtimeClasspath
+    main = javaMainClass
+}
