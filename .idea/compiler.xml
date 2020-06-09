@@ -3,6 +3,8 @@
   <component name="CompilerConfiguration">
     <bytecodeTargetLevel>
       <module name="MasterQC.main" target="1.8" />
+      <module name="MasterQC.MasterQC.main" target="1.8" />
+      <module name="MasterQC.MasterQC.test" target="1.8" />
       <module name="MasterQC.test" target="1.8" />
     </bytecodeTargetLevel>
   </component>
