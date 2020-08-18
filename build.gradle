@@ -39,10 +39,10 @@ tasks.create("test1") {
 }
 
 run {
-    standardInput = System.in
-    println "Please enter the complete path to your input file. BAM/SAM/CRAM formats only."
-    args System.in.read()
-    println "ok"
+//    standardInput = System.in
+//    println "Please enter the complete path to your input file. BAM/SAM/CRAM formats only."
+//    args java.io.File(System.in.read())
+//    println "ok"
 }
 
 tasks.create("test_bam_input") {
