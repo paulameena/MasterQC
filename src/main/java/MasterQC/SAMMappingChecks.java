@@ -83,7 +83,7 @@ public class SAMMappingChecks {
 
         }
         this.median_insertsize=determine_median();
-        System.out.println(insertsizes);
+//        System.out.println(insertsizes);
 //        System.out.println();
         this.fraction_dups = this.duplicate_reads/this.total_reads;
         //System.out.println(unmapped_reads);
