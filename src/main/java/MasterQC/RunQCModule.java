@@ -36,7 +36,7 @@ public class RunQCModule {
             String s;
             SAMMappingChecks mapqc = new SAMMappingChecks(inputFile);
             System.out.println("trying 1");
-            Process p = Runtime.getRuntime().exec("bamtools stats -in " + inputFile + " -insert");
+            Process p = Runtime.getRuntime().exec("samtools stats -in " + inputFile + " -insert");
             System.out.println("trying 2");
             BufferedReader br = new BufferedReader(new InputStreamReader(p.getInputStream()));
 //            System.out.println(p);
