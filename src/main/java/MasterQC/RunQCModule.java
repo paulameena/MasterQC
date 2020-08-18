@@ -36,19 +36,19 @@ public class RunQCModule {
             String s;
             SAMMappingChecks mapqc = new SAMMappingChecks(inputFile);
             System.out.println("trying 1");
-            Process p = Runtime.getRuntime().exec("samtools stats -in " + inputFile + " -insert");
-            System.out.println("trying 2");
-            BufferedReader br = new BufferedReader(new InputStreamReader(p.getInputStream()));
+//            Process p = Runtime.getRuntime().exec("samtools stats -in " + inputFile + " -insert");
+//            System.out.println("trying 2");
+//            BufferedReader br = new BufferedReader(new InputStreamReader(p.getInputStream()));
 //            System.out.println(p);
-            while ((s = br.readLine()) != null)
-                System.out.println("line: " + s);
+//            while ((s = br.readLine()) != null)
+//                System.out.println("line: " + s);
             mapqc.calculate_mapping_checks();    System.out.println("Fraction of duplicate reads: " + Float.toString(mapqc.getFraction_dups()));
             System.out.println("Fraction of uniquely-mapped, high quality reads: " + Float.toString(mapqc.getFraction_unique_hq_reads()));
             System.out.println("Fraction of unmapped reads: " + Float.toString(mapqc.getFraction_unmapped_reads()));
             System.out.println("Total reads: " + mapqc.getTotal_reads());
             System.out.println("Median insert size: " + mapqc.getMedian_insertsize());
             System.out.println("Total number paired reads: " + mapqc.getTotal_Paired_reads());
-               } catch(IOException e) {
+        } catch(Exception e) {
             System.out.println(e.getMessage());
             SAMMappingChecks mapqc =null;
 }       //mapqc.initialize_defaults(inputFile);
