@@ -34,7 +34,15 @@ tasks.create("test1") {
     doLast {
         println "hello"
 }
+    mainClassName = 'MasterQC.RunQCModule'
 
+}
+
+run {
+    standardInput = System.in
+    println "Please enter the complete path to your input file. BAM/SAM/CRAM formats only."
+    args System.in.read()
+    println "ok"
 }
 
 tasks.create("test_bam_input") {

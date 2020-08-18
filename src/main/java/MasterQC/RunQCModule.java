@@ -11,12 +11,12 @@ public class RunQCModule {
     public static void main(String[] args){
         final long start = System.currentTimeMillis();
         //System.out.println(start);
-//        if (args.length < 1) {
-//            System.out.println("Uage: " + PrintVariantsExample.class.getCanonicalName() + " inFile [outFile]");
-//            System.exit(1);
-//        }
-        System.out.println("Please enter the complete path to the input file");
-        File inputFile = new File(System.console().readLine());
+        if (args.length < 1) {
+            System.out.println("Uage: " + PrintVariantsExample.class.getCanonicalName() + " inFile [outFile]");
+            System.exit(1);
+        }
+//        System.out.println("Please enter the complete path to the input file");
+        File inputFile = new File(args[0]);
 //        File inputFile2 = new File(args[1]);
 //        try {
 //            Runtime.getRuntime().exec("samtools view -h " + args[0] + " > temp.sam");
