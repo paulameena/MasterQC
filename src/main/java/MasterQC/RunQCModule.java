@@ -1,6 +1,7 @@
 package MasterQC;
 import htsjdk.variant.example.PrintVariantsExample;
 import htsjdk.*;
+import javafx.scene.shape.Path;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -17,6 +18,9 @@ public class RunQCModule {
         }
 //        System.out.println("Please enter the complete path to the input file");
         File inputFile = new File(args[0]);
+        if (!inputFile.exists()) {
+            System.out.println("File does not exist");
+        }
 //        File inputFile2 = new File(args[1]);
 //        try {
 //            Runtime.getRuntime().exec("samtools view -h " + args[0] + " > temp.sam");
