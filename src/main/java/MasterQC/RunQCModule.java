@@ -17,7 +17,7 @@ public class RunQCModule {
             System.exit(1);
         }
 //        System.out.println("Please enter the complete path to the input file");
-        File inputFile = new File(args[0]);
+        File inputFile = new File(args[0].trim());
         if (!inputFile.exists()) {
             System.out.println("File does not exist");
         }
