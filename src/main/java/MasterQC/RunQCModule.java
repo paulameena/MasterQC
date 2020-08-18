@@ -11,18 +11,19 @@ public class RunQCModule {
     public static void main(String[] args){
         final long start = System.currentTimeMillis();
         //System.out.println(start);
-        if (args.length < 1) {
-            System.out.println("Usage: " + PrintVariantsExample.class.getCanonicalName() + " inFile [outFile]");
-            System.exit(1);
-        }
-        File inputFile = new File(args[0]);
+//        if (args.length < 1) {
+//            System.out.println("Uage: " + PrintVariantsExample.class.getCanonicalName() + " inFile [outFile]");
+//            System.exit(1);
+//        }
+        System.out.println("Please enter the complete path to the input file");
+        File inputFile = new File(System.console().readLine());
 //        File inputFile2 = new File(args[1]);
-        try {
-            Runtime.getRuntime().exec("samtools view -h " + args[0] + " > temp.sam");
-            File targetsam = new File("temp.sam");
-        } catch (Exception e) {
-            //do nothing for now
-        }
+//        try {
+//            Runtime.getRuntime().exec("samtools view -h " + args[0] + " > temp.sam");
+//            File targetsam = new File("temp.sam");
+//        } catch (Exception e) {
+//            //do nothing for now
+//        }
         try {
             String s;
             SAMMappingChecks mapqc = new SAMMappingChecks(inputFile);
