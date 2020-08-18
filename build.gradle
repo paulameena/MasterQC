@@ -30,3 +30,13 @@ dependencies {
     // Define the main class for the application
 mainClassName = 'MasterQC.RunQCModule'
 
+tasks.create("test1") {
+    doLast {
+        println "hello"
+}
+
+}
+
+tasks.create("test_bam_input") {
+
+}
